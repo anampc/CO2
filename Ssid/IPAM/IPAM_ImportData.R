@@ -4,7 +4,12 @@
   library(dplyr)
   library(reshape2)
 
-# Get all the data in one file
+# 1. Read all the .csv files (; delimited) and consolidate them in a single data frame
+  # Path: folder containing the .csv files, in this example "IPAM-Raw"
+  # The data in "IPAM-Raw"can be separated in subfolders, recursive = TRUE will find the .csv inside the subfolders
+  # You can use the subfolders names to later extract information with the option full.names=TRUE, in this 
+  # example the subfolders are the differents sampling dates, but it could be treatments, locations...
+  
 IPAM.data=ldply(list.files(path="IPAM-Raw", pattern=".csv", 
                            full.names=TRUE, recursive = TRUE),
              function(filename) {
@@ -13,34 +18,41 @@ IPAM.data=ldply(list.files(path="IPAM-Raw", pattern=".csv",
     return(dum)
 })
 
-# Remove unused columns
-  IPAM.data[1:4] <- list(NULL)
-  IPAM.data$X <-NULL
+# 2. Select the columns that contain the file path and the YII values
 
-# Get pics number
-  file.picture <- rbind.fill(lapply(strsplit(as.character(IPAM.data$filename), split="/"), 
-                                         function(X) data.frame(t(X))))
-  colnames(file.picture) <- c("Folder", "Date","File")
-  IPAM.data <- cbind(file.picture[,-1], IPAM.data)
-  IPAM.data$filename <-NULL
+IPAM.data<-IPAM.data[,grep("filename|Y.II.", names(IPAM.data))]
 
 # Change to long format
-  IPAM.data <- na.omit(melt(IPAM.data, id=c("Date","File"),
-                            variable.name = "variable.fragment"))
+IPAM.data <- na.omit(melt(IPAM.data, id=c("filename")))
+  
+# 3.separate folder and file information contained in "filename"
+  # In this example each subfolder correspond to different dates, but it could be treatments, locations...
+  # Followed for the specific file name
 
-#  Merge with sample information and check for missing data
+file.picture <- rbind.fill(lapply(strsplit(as.character(IPAM.data$filename), split="/"), 
+                                         function(X) data.frame(t(X))))
+                colnames(file.picture) <- c("Folder", "Date", "File")
 
-  fragments<-read.csv("Fragments.csv")
+IPAM.data <- cbind(file.picture[,-1], IPAM.data[,-1])
   
-  ErrorI<-anti_join(fragments, IPAM.data, by =c("Date", "File", "variable.fragment"))
-  ErrorII<-anti_join(IPAM.data, fragments, by =c("Date", "File", "variable.fragment"))
+# 4. Merge with sample information and check for missing data
+  # Import a csv file containing the specific ID for each AOI in each file 
+  # In this case the subfolder will be matched with the date (optional)
+  # Same file names can be repeated in different subfolders
+
+  ID_AOI<-read.csv("Fragments.csv")
+  ID_AOI$variable<-paste("Y.II.",ID_AOI$AOI, sep = "")
   
-  IPAM.data_long<-join(fragments, IPAM.data, by =c("Date", "File", "variable.fragment"), type="inner")
-  IPAM.data_long[7:11] <- list(NULL)
+  IPAM.data<-join(ID_AOI, IPAM.data, by =c("Date", "File", "variable"), type="inner")
   
-  colnames(IPAM.data_long) <- c("Time", "Date", "Colony", "Core", "Temp",
-                                "CO2", "YII")
+# 5. Check for missing data (Optional)
+    ErrorI<-anti_join(ID_AOI, IPAM.data, by =c("Date", "File", "variable"))
+    ErrorII<-anti_join(IPAM.data, ID_AOI, by =c("Date", "File", "variable"))
+    
+# 6. get rid of file info and rename columns  
+  IPAM.data<-select(IPAM.data, Time, Date, Colony, Core, Temp, CO2, value)
+      colnames(IPAM.data) <- c("Time","Date", "Colony", "Core","Temp", "CO2", "YII")
   
-# Export the data as a .csv?
-  write.csv(IPAM.data_long, file="YII_long_2017-10-03.csv")
+ # Export the data as a .csv?
+  write.csv(IPAM.data, file="YII_long_2017-10-03.csv")
 

@@ -6,11 +6,15 @@
 /*/*/.Rproj
 
 
-# Other files
+# Raw data files
+
 */IPAM/IPAM-Raw
 */IPAM/OldData
 */Data
 
-*.pdf
+# Outputs
 *.html
 *.JPG
+
+# Other files
+.directory

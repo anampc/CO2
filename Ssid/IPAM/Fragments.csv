@@ -1,4 +1,4 @@
-Time,Date,Colony,Core,Temp,CO2,Pic_0,AOI,File ,variable.fragment,YII
+Time,Date,Colony,Core,Temp,CO2,Pic,AOI,File ,variable.fragment,YII
 0,2017-09-01,20,20-34,26,HCO2,1,22,1.csv,Y.II.22,
 0,2017-09-01,20,20-52,26,HCO2,2,14,2.csv,Y.II.14,
 0,2017-09-01,20,20-61,26,HCO2,2,23,2.csv,Y.II.23,
