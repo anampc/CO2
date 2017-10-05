@@ -1,0 +1,124 @@
+---
+title: "Ssid_YII_CO2"
+author: "AnaPalacio"
+date: "Oct 03, 2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+# General project set-up 
+
+```{r libraries, results="hide"}
+
+getwd()
+
+# Get all libraries and sources required to run the script
+
+library(dplyr)
+library(plyr)
+library(reshape2)
+library(ggplot2)
+
+# Import your data: 
+
+## Long format Ssid YII
+Ssid.Tall<-read.csv("YII_long_2017-10-03.csv", header = TRUE)
+
+# Wide formating 
+Ssid.wide<- reshape(Ssid.Tall, idvar = "Core", timevar = "Time", direction = "wide")
+
+write.csv(Ssid.wide, file="YII_wide_2017-10-03.csv")
+```
+
+
+# YII over time by temperature
+
+```{r Graphs YII, echo =FALSE}
+
+YII<- ggplot(Ssid.Tall, aes (Time, YII, colour=factor(Colony)))
+YII + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2 )+
+  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) + # geom_jitter() + 
+  facet_grid (~Colony)
+
+
+```
+
+# YII by fragments over time
+
+```{r GraphsFrag, echo =FALSE}
+YII_Frag <- ggplot(Ssid.Tall, aes (Time, YII))
+YII_Frag + geom_point() + facet_wrap (~Temp)
+
+library(lattice)
+xyplot(YII ~ Time | Temp, data=Ssid.Tall, type=c("p", "r"), ylim=c(0.0, 0.7))
+```
+
+
+```{r StatsForTreattmentandTime}
+
+YII_Bott <- ggplot(Ssid.Tall, aes (Time, YII, colour=factor(Treatment)))
+YII_Bott + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
+  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) +
+  stat_summary(fun.y=mean, geom="line")
+  # geom_jitter()+
+
+
+Ssid.Tall$Treatment <- as.factor(Ssid.Tall$Treatment)
+Ssid.Tall$Time <- as.factor(Ssid.Tall$Time)
+
+library(multcomp)
+library(multcompView)
+library(lsmeans)
+
+
+LM_Treatment <- lm(YII ~ Treatment, data= Ssid.Tall)
+
+LM_Time <-lm(YII ~ Time, data = Ssid.Tall)
+
+LM_Tre_Time <- lm(YII ~ Time * Treatment, data=Ssid.Tall)
+
+anova(LM_Treatment)
+TukeyHSD(aov(LM_Treatment))
+
+anova(LM_Time)
+TukeyHSD(aov(LM_Time))
+
+anova(LM_Tre_Time)
+# TukeyHSD(aov(LM_Tre_Time))
+
+#  cld from multicom  set a compact letter display of all pair-wise comparisons.
+cld(lsmeans(LM_Treatment, "Treatment"))
+cld(lsmeans(LM_Time, "Time"))
+cld(lsmeans(LM_Tre_Time, specs = c("Treatment", "Time")))
+
+```
+
+# Changes bt time points 
+
+```{r ChangePerTime, echo =FALSE}
+Ssid.wide$Change1<-((Ssid.wide$YII_1)-(Ssid.wide$YII_0))
+Ssid.wide$Change2<-((Ssid.wide$YII_2)-(Ssid.wide$YII_1))
+Ssid.wide$Change3<-((Ssid.wide$YII_2)-(Ssid.wide$YII_0))
+
+
+YII_Change1 <- ggplot(Ssid.wide, aes (Treatment, Change1, colour=factor(Treatment)))
+YII_Change1 + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
+  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) +
+  geom_jitter()
+
+YII_Change2 <- ggplot(Ssid.wide, aes (Treatment, Change2, colour=factor(Treatment)))
+YII_Change2 + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
+  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) +
+  geom_jitter()
+
+YII_Change3 <- ggplot(Ssid.wide, aes (Treatment, Change3, colour=factor(Treatment)))
+YII_Change3 + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
+  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) +
+  geom_jitter()
+
+```
