@@ -54,6 +54,6 @@ IPAM.data <- cbind(file.picture[,-1], IPAM.data[,-1])
   colnames(IPAM.data) <- c("Date", "Temperature", "Tank", "Fragment", "YII")
   
   # Export the data as a .csv?
-  write.csv(IPAM.data, file="YII_long_2017-9-27.csv")
+  write.csv(IPAM.data, file="YII_2017-10-05.csv")
 
   

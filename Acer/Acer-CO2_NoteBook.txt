@@ -222,6 +222,7 @@
 ------
 # Sep 2-12, 2017
 * Irma time, no data taken
+------
 
 # Sep 20, 2017
 
@@ -233,6 +234,19 @@
 	- Fragments 209 (F), 210 (C) and 296 (F) in 28C
 	- Fragments 212 (F), 213 (C) and 295 (F) in 29C
 
+------
+
+# Sep 27, 2017
+
+## 19th IPAM data
+* IPAM by CDand AP
+
+------
+
+# Oct 05, 2017
+
+## 20th IPAM data
+* IPAM by CDand AP
 
 
 

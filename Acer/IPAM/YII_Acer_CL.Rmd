@@ -15,8 +15,6 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 
 ```{r libraries, results="hide"}
 
-getwd()
-
 # Get all libraries and sources required to run the script
 
 library(dplyr)
@@ -25,7 +23,7 @@ library(reshape2)
 library(ggplot2)
 
 # Import your data: 
-Acer.Tall<-read.csv("YII_2017-09-27_Tall.csv")
+Acer.Tall<-read.csv("YII_2017-10-05_Tall.csv")
 Acer.wide<-read.csv("YII_2017-09-27_Wide.csv")
 ```
 
@@ -64,12 +62,11 @@ Growth + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
 
 ```{r GraphsFrag, echo =FALSE}
 library(dplyr)
-Last.data<-Acer.Tall[which(Acer.Tall$Time==18), ]
+Last.data<-Acer.Tall[which(Acer.Tall$Time==20), ]
 
-
-Last.data %>% 
-  group_by(Treatment) %>% 
-  summarise (min_YII = min(YII), max_mpg = max(YII), mean_YII= mean(YII))
+summary<-Last.data %>% 
+  group_by(Treatment) %>%
+  summarise (min_YII = min(YII), max_YII = max(YII), mean_YII= mean(YII))
 
 
 YII_Frag <- ggplot(Acer.Tall, aes (Time, YII))
@@ -78,28 +75,6 @@ YII_Frag + geom_point() + facet_wrap (~Treatment)
 library(lattice)
 xyplot(YII ~ Time | Treatment, data=Acer.Tall, type=c("p", "r"), ylim=c(0.0, 0.7))
 ```
-
-# Fo and Fm over time
-
-```{r Graphs Fo Fm, echo =FALSE}
-Fo_Bott <- ggplot(Acer.Tall, aes (Time, F0, colour=factor(Treatment)))
-Fo_Bott + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
-  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) +
-  #geom_jitter()+
- facet_grid (~Treatment)
-
-
-Fm_Bott <- ggplot(Acer.Tall, aes (Time, Fm, colour=factor(Treatment)))
-Fm_Bott + stat_summary(fun.data = "mean_cl_boot",geom = "errorbar", width = 0.2)+
-  stat_summary(fun.y=mean, geom="point", size =3, alpha=0.5) +
-  #geom_jitter()+
- facet_grid (~Treatment)
-
-```
-
-
-
-
 
 Stats
 
