@@ -5,7 +5,7 @@
   library(reshape2)
 
 # Get all the data in one file
-IPAM.data=ldply(list.files(path="IPAM", pattern=".csv", 
+IPAM.data=ldply(list.files(path="IPAM-Raw", pattern=".csv", 
                            full.names=TRUE, recursive = TRUE),
              function(filename) {
       dum=(read.csv(filename, sep = ";", blank.lines.skip=T))
@@ -30,7 +30,7 @@ IPAM.data=ldply(list.files(path="IPAM", pattern=".csv",
 
 #  Merge with sample information and check for missing data
 
-  fragments<-read.csv("Data/Fragments.csv")
+  fragments<-read.csv("Fragments.csv")
   
   ErrorI<-anti_join(fragments, IPAM.data, by =c("Date", "File", "variable.fragment"))
   ErrorII<-anti_join(IPAM.data, fragments, by =c("Date", "File", "variable.fragment"))
@@ -42,5 +42,5 @@ IPAM.data=ldply(list.files(path="IPAM", pattern=".csv",
                     timevar = "variable", direction = "wide")
   
 # Export the data as a .csv?
-  write.csv(IPAM.data_long, file="Data/YII_2017-09-27.csv")
+  write.csv(IPAM.data_long, file="YII_2017-09-27.csv")
 

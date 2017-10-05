@@ -25,8 +25,8 @@ library(reshape2)
 library(ggplot2)
 
 # Import your data: 
-Acer.Tall<-read.csv("Data/YII_2017-09-27_Tall.csv")
-Acer.wide<-read.csv("Data/YII_2017-09-27_Wide.csv")
+Acer.Tall<-read.csv("YII_2017-09-27_Tall.csv")
+Acer.wide<-read.csv("YII_2017-09-27_Wide.csv")
 ```
 
 

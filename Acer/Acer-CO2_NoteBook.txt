@@ -1,0 +1,239 @@
+# April 12, 2017
+
+## 1st IPAM data
+
+* Corals were dark adapted for ~ 30 min. 
+* started  @ 4:30
+
+------
+
+# April 13, 2017
+
+## First Tissue samples
+
+* Whole disc slices at the base of the colonies. 
+* Razor blade samples for super small fragments
+	* 86, 3, 46, 19, 23, 10, 4, 48, 112, 17 (x2)
+	
+* SDS incubation ~ 2 hours
+
+------
+
+# April 13, 2017
+
+* Prok incubation for ~ 4 hours
+
+------
+
+
+# April 17, 2017
+* Organic extractions
+* Screw samples 50 and 61. Need to be re-extracted
+
+------
+
+
+# April 18, 2017
+* 2nd EtOH precipitation (used 2x volumen of NaOAc and ETOH)
+
+------
+
+
+# April 19, 2017
+* EtOH wash, DNA was resuspendedn in 0.1 TE
+## 2nd IPAM 
+* to check Acer in tank at 28C that has higher variablitily in YII values
+* Lights in tank at 27C were not on a timer  
+
+------
+
+
+# April 26, 2017
+## 3rd IPAM data
+
+------
+
+
+# May 10, 2017
+## 4th IPAM data
+
+------
+
+
+# May 17, 2017
+## 5th IPAM data
+
+------
+
+
+# May 24, 2017
+## 6th IPAM data
+* IPAM by CD and GS
+	* Missing 86
+	* Bottom of 44 is dead
+
+------
+
+
+# May 31, 2017
+## 7th IPAM data
+* IPAM by GS and AP
+
+------
+
+
+# June 06, 2017
+## 8th IPAM data
+* IPAM by GS and CD
+* Fragment 3 died
+* 81, 69, 80, 66 did not have a data
+* New fragment (127), but no data taken
+
+------
+
+
+# June 14, 2017
+* All fragments in tank 4 at 28C died. The temp sensor was out of the water and they were cooked overnight
+
+------
+
+
+# June 14, 2017
+## 9th IPAM data
+* IPAM by GS and AP
+* Fragment 127 is part of original 44 that was fragmented
+
+------
+
+# June 21, 2017
+## 10th IPAM data
+* IPAM by GS and AP
+
+------
+
+# June 28, 2017
+## 11th IPAM data
+* IPAM by CD and AP
+* Fragment 134b from the new guys is dead. 
+
+------
+
+# July 05, 2017
+## 12th IPAM data
+* IPAM by GS and AP
+* Fragment 137b from the new guys is dead. 
+* Las framgent in pic 15 was out-> 15b picture
+
+------
+
+# July 12, 2017
+## 13th IPAM data
+* IPAM by CD and AP
+* Data taken erlier than before (~ 10-11AM)
+* No pics
+
+------
+
+# July 19, 2017
+## 14th IPAM data
+* IPAM by CD and AP
+* No pics
+* YII values very similar during the last 4 data points. 
+
+------
+
+# July 26, 2017
+## 15th IPAM data
+* IPAM by CD and AP
+* No pics
+* YII values similar during the last data points. However 26 went up and 28 stay down
+* 1/4 of the IPAM lights are not working
+
+------
+
+# Aug 1, 2017
+## Corals from other temps moved to 28C treatment
+* Corals in 28C had lower YII and as well as low values in physiological paramenters. Is this new batch of corals bad? 
+* 16 corals from other temps were moved to this treatment
+	* 12 from 29 C (87, 23, 38, 10, 14, 45, 69, 66, 25, 2, 24, 41)
+	* 2 from 26 C (1, 72)
+	* 2  from 27 C (35, 31)
+*  We now have 18 corals in the 26, 27 and 29 C treatments and 16 in the 28 C treatment.
+
+------
+
+# Aug 2, 2017
+## NO IPAM data
+* IPAM broke
+
+------
+
+# Aug 9, 2017
+## 16th IPAM data
+* IPAM by CL and GS
+* No pics 
+* Pic 13 was not taken, but got data (No new record)
+* Pic 18 was taken twice?
+* Other changes
+	- 62, 63 and 65 were taken from 27C to 28C
+
+| Temperature  |# of frags| 
+|--------------|-----| 
+| 26C           | 18  | 
+| 27C           | 20  | 
+| 28             | 18  | 
+| 28b           | 19  | 
+| 28Total     | 37  |
+| 29             | 18  | 
+| Total alive  | 93 | 
+| Dead          | 35  | 
+| Transfered  | 19  | 
+
+------
+
+# Aug 16, 2017
+## 17th IPAM data
+* IPAM by CD and AP
+* No pics 
+
+------
+
+# Aug 18, 2017
+## Fragments added for "Control"
+* 12 fragments from "Frost corals" were obtained from Rivah's corals
+* 9 from genotype F and 3 from genopype C
+	- Fragments 201 (F), 202 (C) and 298 (F) are in 26C
+	- Fragments 205 (F), 207 (C) and 297 (F) are in 27 and will stay there
+	- Fragments 209 (F), 210 (C) and 296 (F) are in 27 and will go to 28
+	- Fragments 212 (F), 213 (C) and 295 (F) are in 27 and will go to 28 and then 29
+------
+
+# Aug 25, 2017
+
+## 17th IPAM data
+* IPAM by MK and AP
+* 6 fragments "control" were moved to tank at 28
+	- Fragments 201 (F), 202 (C) and 298 (F) are in 26C
+	- Fragments 205 (F), 207 (C) and 297 (F) are in 27 
+	- Fragments 209 (F), 210 (C) and 296 (F) were moved to 28
+	- Fragments 212 (F), 213 (C) and 295 (F) were moved to 28 and need to be trasnfered to 29 soon
+* Back to our original PAM machine. All the values were lower! :/
+	
+------
+# Sep 2-12, 2017
+* Irma time, no data taken
+
+# Sep 20, 2017
+
+## 18th IPAM data
+* IPAM by EPontes and AP
+* Fragments "control" were all over the place we moved them to be:
+	- Fragments 201 (F), 202 (C) and 298 (F) in 26C
+	- Fragments 205 (F), 207 (C) and 297 (F) in 27C 
+	- Fragments 209 (F), 210 (C) and 296 (F) in 28C
+	- Fragments 212 (F), 213 (C) and 295 (F) in 29C
+
+
+
+
+

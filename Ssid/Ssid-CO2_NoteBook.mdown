@@ -1,0 +1,47 @@
+# Siderastrea siderea cores in CO2 experiment
+
+## Oct 03, 2017
+
+### Core allocation for CO2 experiment 
+* ~ 49-50 cores were allocated to each temperature 
+* Made egg crates of 7*8 and split them
+* Cleaned and organized all the Ssid cores
+* Master file updated with the cores in the tank
+* Used insecticide to kill fireworms
+* IPAM time 1 
+	- Time 0 was done for all the cores including the ones in nutrients on Sep 1st
+	- Time 1 values are lower than time 0 :/
+* Cores in 26, 27 and 28 were transfered to their assigned temperature, but cores going to 29 stayed in 28 for acclimation
+
+|   Temp  /CO2      |Colony| 20 | 22 | 23 | 24 | 27 | 30 | Total|
+|-----------|------|----|----|----|----|----|----|--------------| 
+| 26         | All       | 13 | 7  | 9  | 7  | 7  | 6  | 49| 
+| 26         | HCO2   | 7  | 4  | 4  | 3  | 4  | 3  | 25| 
+| 26         | LCO2   | 6  | 3  | 5  | 4  | 3  | 3  | 24| 
+| 27         | All       | 13 | 7  | 10 | 7  | 6  | 7  | 50| 
+| 27         | HCO2  | 7  | 3  | 5  | 3  | 3  | 4  | 25| 
+| 27         | LCO2  | 6  | 4  | 5  | 4  | 3  | 3  | 25| 
+| 28         | All      | 13 | 6  | 10 | 7  | 6  | 7  | 49| 
+| 28         | HCO2 | 7  | 3  | 5  | 3  | 3  | 4  | 25| 
+| 28         | LCO2  | 6  | 3  | 5  | 4  | 3  | 3  | 24| 
+| 29         | All      | 13 | 6  | 10 | 8  | 6  | 6  | 49| 
+| 29         | HCO2 | 7  | 3  | 5  | 4  | 3  | 3  | 25| 
+| 29         | LCO2  | 6  | 3  | 5  | 4  | 3  | 3  | 24| 
+| Total     | All      | 52 | 26 | 39 | 29 | 25 | 26 | 197| 
+
+------
+
+# To do
+
+* Follow IPAM in different temperatures
+* Feeding/cleaning schedule
+
+------
+
+## Date, 2017
+
+### Task
+
+* Notes
+
+------
